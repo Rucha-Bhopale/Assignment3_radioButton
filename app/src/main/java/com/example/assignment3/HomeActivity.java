@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
     EditText edtInput;
-    RadioGroup rdGroup;
+    RadioGroup rdGroup, rdGroup2;
     String strText;
 
     RadioButton rdBtnUpper, rdBtnLower, rdBtnInnerCapital, rdBtnReverse;
@@ -42,6 +42,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        rdGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                applyTextTransformationrdGroup2();
+            }
+        });
+
         btnGotoMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +72,8 @@ public class HomeActivity extends AppCompatActivity {
         rdBtnInnerCapital = findViewById(R.id.rdBtnInnerCapital);
         rdBtnReverse = findViewById(R.id.rdBtnReverse);
         btnGotoMain = findViewById(R.id.btnGotoMain);
+        rdGroup2 = findViewById(R.id.rdGroup2);
+
     }
 
     private void applyTextTransformation() {
@@ -73,13 +82,21 @@ public class HomeActivity extends AppCompatActivity {
             edtInput.setText(originalText.toUpperCase());
         } else if (rdBtnLower.isChecked()) {
             edtInput.setText(originalText.toLowerCase());
-        } else if (rdBtnInnerCapital.isChecked()) {
-            edtInput.setText(capitalizeFirstLetter(originalText));
-        } else if (rdBtnReverse.isChecked()) {
-            edtInput.setText(reverseString(originalText));
         } else {
 
         }
+    }
+
+    private void applyTextTransformationrdGroup2() {
+        String originalText = edtInput.getText().toString();
+    if (rdBtnInnerCapital.isChecked()) {
+        edtInput.setText(capitalizeFirstLetter(originalText));
+    } else if (rdBtnReverse.isChecked()) {
+        edtInput.setText(reverseString(originalText));
+
+        } else {
+
+    }
     }
 
     private String capitalizeFirstLetter(String text) {

@@ -10,10 +10,9 @@
         android:id="@+id/edtInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:hint="Edit Input"
-        android:textSize="40dp" />
-
+        android:textSize="45dp" />
 
 
     <RadioGroup
@@ -22,15 +21,18 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-
+        android:padding="20dp"
         >
+
 
         <RadioButton
             android:id="@+id/rdBtnUpper"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.35"
-            android:text="Upper Case"/>
+            android:text="Upper Case"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
 
 
         <RadioButton
@@ -38,22 +40,39 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.35"
-            android:text="Lower Case"/>
+            android:text="Lower Case"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rdGroup2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp"
+        >
 
         <RadioButton
             android:id="@+id/rdBtnInnerCapital"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.35"
-            android:text="Inner Capital"/>
+            android:text="Inner Capital"
+            android:textStyle="bold"
+            android:textSize="15dp"/>
 
         <RadioButton
             android:id="@+id/rdBtnReverse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.35"
-            android:text="Reverse"/>
+            android:textStyle="bold"
+            android:text="Reverse"
+            android:textSize="15dp"/>
     </RadioGroup>
+
 
 
     <Button
@@ -61,6 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GoTo Main"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_marginTop="30dp"
         />
 
